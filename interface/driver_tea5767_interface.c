@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE. 
  *
- * @file      driver_tea5767_interface_template.c
+ * @file      driver_tea5767_interface.c
  * @brief     driver tea5767 interface template source file
  * @version   1.0.0
  * @author    Shifeng Li
