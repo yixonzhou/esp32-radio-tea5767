@@ -50,3 +50,16 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# ide
+.idea
+.vscode
+.github
+
+# 例程
+project/stm32f407
+
+# 构建目录
+build
+cmake-build-debug-esp32s3
+
