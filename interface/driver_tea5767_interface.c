@@ -45,7 +45,7 @@
 /**
  * @brief chip address definition
  */
-#define TEA5767_ADDRESS             0xC0        /**< iic device address */
+#define TEA5767_ADDRESS             0x60        /**< iic device address, 这是左移前的地址 */
 
 i2c_master_bus_handle_t i2c_master_bus_handle;
 i2c_master_dev_handle_t i2c_master_dev_handle;
@@ -63,7 +63,7 @@ uint8_t tea5767_interface_iic_init(void) {
     // 初始化iic设备
     i2c_device_config_t device_config = {
         .dev_addr_length = I2C_ADDR_BIT_LEN_7,
-        .device_address = TEA5767_ADDRESS,
+        .device_address = TEA5767_ADDRESS, // esp32的i2c驱动会自动左移，所以填写左移前的地址
         .scl_speed_hz = 400'000, // tea5767最大频率400 khz
         .scl_wait_us = 0,
     };
@@ -80,7 +80,7 @@ uint8_t tea5767_interface_iic_init(void) {
  * @note   none
  */
 uint8_t tea5767_interface_iic_deinit(void) {
-    ESP_ERROR_CHECK(i2c_master_bus_rm_device(i2c_master_dev_handle));
+    // ESP_ERROR_CHECK(i2c_master_bus_rm_device(i2c_master_dev_handle));
     return 0;
 }
 

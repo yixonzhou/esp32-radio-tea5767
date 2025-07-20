@@ -51,7 +51,7 @@
 /**
  * @brief chip address definition
  */
-#define TEA5767_ADDRESS             0xC0        /**< iic device address */
+#define TEA5767_ADDRESS             0x60        /**< iic device address */
 
 /**
  * @brief      read bytes
